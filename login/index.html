@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/socket.io.js"></script>
+    <script>
+      $(function() {
+        var server_address = 'http://' + location.hostname + ':8080';
+        var socket = io.connect(server_address);
+
+        $('#login').click(function() {
+          var passcode = $(':input').val();
+          socket.emit('login', { passcode : passcode });
+        });
+
+        socket.on('valid', function(data) {
+          $('#login-div').hide();
+          $('#remote-div').show();
+        });
+
+        $('#next').click(function() {
+          socket.emit('request_next');
+        });
+
+        $('#previous').click(function() {
+          socket.emit('request_prev');
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="login-div">
+      Passcode : <input type="text" />
+      <br />
+      <button id="login">Login</button>
+    </div>
+    <div id="remote-div" style="display: none;">
+      <div id="next">Next</div>
+      <div id="previous">Previous</div>
+    </div>
+  </body>
+</html>
+

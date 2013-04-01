@@ -1,0 +1,20 @@
+{
+  "name": "remote-clicker",
+  "version": "0.1.0",
+  "author": "Jordan Raffoul <raffoul.jordan@gmail.com>",
+  "description": "",
+  "contributors": [ 
+    {
+      "name": "Jordan Raffoul",
+      "email": "raffoul.jordan@gmail.com"
+    } 
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbraffoul/remote-clicker.git"
+  },
+  "dependencies" : {
+    "express": "3.1.0",
+    "socket.io": "0.9.13"
+  }
+}
