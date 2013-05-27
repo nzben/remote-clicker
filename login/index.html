@@ -13,10 +13,12 @@
 
         $('#login').click(function() {
           var passcode = $(':input').val();
+          console.log('Sending login');
           socket.emit('login', { passcode : passcode });
         });
 
         socket.on('valid', function(data) {
+          console.log('Got valid login');
           $('#login-div').hide();
           $('#remote-div').show();
         });
@@ -41,7 +43,7 @@
     <div id="login-div">
       Passcode:<br/>
       <input type="text" size="10"/><br/>
-      <input type="submit" id="login">Login</button>
+      <input type="button" id="login">Login</button>
     </div>
     <div id="remote-div" style="display: none;">
       <ul>
