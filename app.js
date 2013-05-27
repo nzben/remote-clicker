@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var server = app.listen(process.env.PORT ? process.env.PORT : 1337);
 var io = require('socket.io').listen(server);
+io.set('transports', ['xhr-polling']);
 
 var config = require('./config');
 
