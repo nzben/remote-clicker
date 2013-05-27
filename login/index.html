@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/clickerStyle.css">
     <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="js/socket.io.js"></script>
+    <script type="text/javascript" src="js/clientConfig.js"></script>
     <script>
       $(function() {
-        var server_address = 'http://' + location.hostname + ':8080';
+        var server_address = 'http://' + location.hostname + ':' + config.port;
         var socket = io.connect(server_address);
 
         $('#login').click(function() {
@@ -19,25 +22,29 @@
         });
 
         $('#next').click(function() {
+          console.log('Next clicked');
           socket.emit('request_next');
         });
 
         $('#previous').click(function() {
+          console.log('Previous clicked');
           socket.emit('request_prev');
         });
       });
     </script>
   </head>
 
-  <body>
+  <body class="clicker" meta>
     <div id="login-div">
       Passcode : <input type="text" />
       <br />
       <button id="login">Login</button>
     </div>
     <div id="remote-div" style="display: none;">
-      <div id="next">Next</div>
-      <div id="previous">Previous</div>
+      <ul>
+      <li id="next">Next</li>
+      <li id="previous">Previous</li>
+      </ul>
     </div>
   </body>
 </html>
