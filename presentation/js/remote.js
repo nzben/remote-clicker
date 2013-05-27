@@ -12,6 +12,11 @@ $(function() {
     sendNotes(el);
   });
 
+  socket.on('connection_test', function(data){
+    console.log('Sending connection ok');
+    socket.emit('connection_response_request', 'ok');
+  });
+
   function sendNotes(el){
   	// find the notes div
     var notes = jQuery(el).find('.notes');

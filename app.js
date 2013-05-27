@@ -45,6 +45,18 @@ io.sockets.on('connection', function (socket) {
       io.sockets.emit('transition_prev');
   });
 
+  socket.on('connection_test_request', function(data){
+    console.log('Got connection test request');
+    remotes.push(socket.id);
+    io.sockets.emit('connection_test', data);
+  });
+
+  socket.on('connection_response_request', function(data) {
+    console.log('Got connection response request');
+    remotes.push(socket.id);
+    io.sockets.emit('connection_response', data);
+  });
+
 
   socket.on('notes', function(data){
     console.log('Got notes: '+data);

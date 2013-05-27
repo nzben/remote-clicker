@@ -31,6 +31,11 @@
           $('#notes').html(data);
         });
 
+        socket.on('connection_response', function(data){
+          console.log('Got connection response')
+          $('#loader').hide();   
+        });
+
         $('#next').click(function() {
           $('#loader').show();
           socket.emit('request_next');
@@ -40,6 +45,9 @@
           $('#loader').show();
           socket.emit('request_prev');
         });
+
+        console.log('Testing connection');
+        socket.emit('connection_test_request');
       });
     </script>
   </head>
@@ -47,6 +55,7 @@
   <body class="clicker" meta>
     <div id="loader">
       <img src="/images/ajax-loader.gif" />
+      Connnecting...
     </div>
     <div id="login-div">
       Passcode:<br/>
