@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var server = app.listen(process.env.PORT);
+var server = app.listen(process.env.PORT ? process.env.PORT : 1337);
 var io = require('socket.io').listen(server);
 
 var config = require('./config');
@@ -17,7 +17,7 @@ app.get('/', function(req, res){
   res.sendfile(__dirname + '/presentation/index.html');
 });
 
-app.get('/login', function(req, res){
+app.get('/clicker', function(req, res){
   res.sendfile(__dirname + '/login/index.html');
 });
 
@@ -45,9 +45,10 @@ io.sockets.on('connection', function (socket) {
       io.sockets.emit('transition_prev');
   });
 
+
   socket.on('notes', function(data){
     console.log('Got notes: '+data);
-    if(remotes.indexOf(socket.id) > -1)
-      io.sockets.emit('notes', data);
+    remotes.push(socket.id);
+    io.sockets.emit('notes', data);
   });
 });

@@ -22,8 +22,8 @@
         });
 
         socket.on('notes', function(data) {
-          console.log('Got notes: '+data);
-          //$('#notes').html(data);
+          //console.log('Clicker got notes');
+          $('#notes').html(data);
         });
 
         $('#next').click(function() {
@@ -41,7 +41,7 @@
     <div id="login-div">
       Passcode:<br/>
       <input type="text" size="10"/><br/>
-      <button id="login">Login</button>
+      <input type="submit" id="login">Login</button>
     </div>
     <div id="remote-div" style="display: none;">
       <ul>
