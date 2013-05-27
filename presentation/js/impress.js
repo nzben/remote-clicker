@@ -417,7 +417,7 @@
         
         // used to reset timeout for `impress:stepenter` event
         var stepEnterTimeout = null;
-        
+
         // `goto` API function that moves to step given with `el` parameter (by index, id or element),
         // with a transition `duration` optionally given as second parameter.
         var goto = function ( el, duration, s ) {
@@ -545,10 +545,9 @@
                 onStepEnter(activeStep);
             }, duration + delay);
 
-            if(s)
-            {
-                s.emit('notes_request', jQuery(el).find('.notes').html());
-            }
+            
+            socket.emit('notes_request', jQuery(el).find('.notes').html());
+            
             
             return el;
         };

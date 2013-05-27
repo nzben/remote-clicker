@@ -373,6 +373,10 @@ if ("ontouchstart" in document.documentElement) {
     
 -->
 <script src="js/impress.js"></script>
+<script type="text/javascript">
+        var server_address = 'http://' + location.hostname + ':' + config.port;
+        var socket = io.connect(server_address);
+</script>
 <script>impress().init();</script>
 
 <!--
