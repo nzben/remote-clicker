@@ -426,7 +426,7 @@
                 // presentation not initialized or given element is not a step
                 return false;
             }
-            
+
             // Sometimes it's possible to trigger focus on first link with some keyboard action.
             // Browser in such a case tries to scroll the page to make this element visible
             // (even that body overflow is set to hidden) and it breaks our careful positioning.

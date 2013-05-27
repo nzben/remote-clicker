@@ -44,4 +44,10 @@ io.sockets.on('connection', function (socket) {
     if(remotes.indexOf(socket.id) > -1)
       io.sockets.emit('transition_prev');
   });
+
+  socket.on('notes', function(data){
+    console.log('Got notes: '+data);
+    if(remotes.indexOf(socket.id) > -1)
+      io.sockets.emit('notes', data);
+  });
 });

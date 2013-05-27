@@ -180,6 +180,10 @@ a:focus {
     line-height: 1.5;
 }
 
+.step .notes {
+    display: none;
+}
+
 /*
     ... and we enhance the styles for impress.js.
 

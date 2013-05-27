@@ -3,11 +3,19 @@ $(function() {
   var socket = io.connect(server_address);
 
   socket.on('transition_next', function(data) {
-    impress().next();
+    var el = impress().next();
+    sendNotes(el);
   });
 
   socket.on('transition_prev', function(data) {
-    impress().prev();
+    var el = impress().prev();
+    sendNotes(el);
   });
+
+  function sendNotes(el){
+  	// find the notes div
+    var notes = jQuery(el).find('.notes');
+    socket.emit('notes', notes.html());
+  }
 
 });

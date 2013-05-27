@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/clickerStyle.css">
     <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="js/socket.io.js"></script>
@@ -21,13 +21,16 @@
           $('#remote-div').show();
         });
 
+        socket.on('notes', function(data) {
+          console.log('Got notes: '+data);
+          //$('#notes').html(data);
+        });
+
         $('#next').click(function() {
-          console.log('Next clicked');
           socket.emit('request_next');
         });
 
         $('#previous').click(function() {
-          console.log('Previous clicked');
           socket.emit('request_prev');
         });
       });
@@ -36,16 +39,17 @@
 
   <body class="clicker" meta>
     <div id="login-div">
-      Passcode : <input type="text" />
-      <br />
+      Passcode:<br/>
+      <input type="text" size="10"/><br/>
       <button id="login">Login</button>
     </div>
     <div id="remote-div" style="display: none;">
       <ul>
-      <li id="next"><div>Next</div></li>
-      <li id="previous"><div>Previous</div></li>
+        <li id="next"><div>Next >></div></li>
+        <li id="previous"><div><< Previous</div></li>
       </ul>
     </div>
+    <div id="notes"></div>
   </body>
 </html>
 
