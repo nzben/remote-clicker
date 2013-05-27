@@ -420,7 +420,7 @@
         
         // `goto` API function that moves to step given with `el` parameter (by index, id or element),
         // with a transition `duration` optionally given as second parameter.
-        var goto = function ( el, duration ) {
+        var goto = function ( el, duration, s ) {
             
             if ( !initialized || !(el = getStep(el)) ) {
                 // presentation not initialized or given element is not a step
@@ -544,24 +544,29 @@
             stepEnterTimeout = window.setTimeout(function() {
                 onStepEnter(activeStep);
             }, duration + delay);
+
+            if(s)
+            {
+                s.emit('notes_request', jQuery(el).find('.notes').html());
+            }
             
             return el;
         };
         
         // `prev` API function goes to previous step (in document order)
-        var prev = function () {
+        var prev = function (s) {
             var prev = steps.indexOf( activeStep ) - 1;
             prev = prev >= 0 ? steps[ prev ] : steps[ steps.length-1 ];
             
-            return goto(prev);
+            return goto(prev, defaults.transitionDuration, s);
         };
         
         // `next` API function goes to next step (in document order)
-        var next = function () {
+        var next = function (s) {
             var next = steps.indexOf( activeStep ) + 1;
             next = next < steps.length ? steps[ next ] : steps[ 0 ];
             
-            return goto(next);
+            return goto(next, defaults.transitionDuration, s);
         };
         
         // Adding some useful classes to step elements.
