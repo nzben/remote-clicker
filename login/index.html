@@ -14,25 +14,30 @@
         $('#login').click(function() {
           var passcode = $(':input').val();
           console.log('Sending login');
+          $('#loader').show();
           socket.emit('login', { passcode : passcode });
         });
 
         socket.on('valid', function(data) {
           console.log('Got valid login');
+          $('#loader').hide();
           $('#login-div').hide();
           $('#remote-div').show();
         });
 
         socket.on('notes', function(data) {
           console.log('Clicker got notes');
+          $('#loader').hide();
           $('#notes').html(data);
         });
 
         $('#next').click(function() {
+          $('#loader').show();
           socket.emit('request_next');
         });
 
         $('#previous').click(function() {
+          $('#loader').show();
           socket.emit('request_prev');
         });
       });
@@ -40,18 +45,20 @@
   </head>
 
   <body class="clicker" meta>
+    <div id="loader">
+      <img src="/images/ajax-loader.gif" />
+    </div>
     <div id="login-div">
       Passcode:<br/>
       <input type="text" size="10"/><br/>
       <button type="button" id="login">Login</button>
     </div>
     <div id="remote-div" style="display: none;">
-      <ul>
-        <li id="next"><div>Next >></div></li>
-        <li id="previous"><div><< Previous</div></li>
-      </ul>
+        <div id="next" class="navbutton">Next >></div>
+        <div id="notes"></div>
+        <div id="previous" class="navbutton"><< Previous</div>
     </div>
-    <div id="notes"></div>
+    
   </body>
 </html>
 
