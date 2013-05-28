@@ -38,7 +38,7 @@
       "notes": "notes for slide FOUR <strong>with bold</strong>"
     }, {
       "id": "its",
-      "content": "<p>It's a <strong>presentation tool</strong> <br/>\ninspired by the idea behind <a href=\"http://prezi.com\">prezi.com</a> <br/>\nand based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>",
+      "content": "<p>impress.js is a <strong>presentation tool</strong> <br/>\ninspired by the idea behind <a href=\"http://prezi.com\">prezi.com</a> <br/>\nFor this site I've added socket.io control.</p>",
       "class": "step",
       "data": {
         "x": 850,
