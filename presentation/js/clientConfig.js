@@ -1,1 +1,1 @@
-var config = { port: 1337 };
+var config = { port: 80 };

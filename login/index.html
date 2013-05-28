@@ -11,12 +11,25 @@
         var server_address = 'http://' + location.hostname + ':' + config.port;
         var socket = io.connect(server_address);
 
-        $('#login').click(function() {
-          var passcode = $(':input').val();
+        function tryLogin(){
+          var passcode = $('#passcode').val();
           console.log('Sending login');
           $('#loader').show();
           socket.emit('login', { passcode : passcode });
+        }
+
+        $('#login').click(function() {
+          tryLogin();
         });
+
+        $('#passcode').keydown(function(e){
+          // Enter is pressed
+          if (e.which == 13) {
+            e.preventDefault(); 
+            tryLogin();
+          }
+        });
+        
 
         socket.on('valid', function(data) {
           console.log('Got valid login');
@@ -48,6 +61,8 @@
 
         console.log('Testing connection');
         socket.emit('connection_test_request');
+
+        
       });
     </script>
   </head>
@@ -59,7 +74,7 @@
     </div>
     <div id="login-div">
       Passcode:<br/>
-      <input type="text" size="10"/><br/>
+      <input type="password" id="passcode" size="10"/><br/>
       <button type="button" id="login">Login</button>
     </div>
     <div id="remote-div" style="display: none;">

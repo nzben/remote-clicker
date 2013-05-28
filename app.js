@@ -60,7 +60,6 @@ io.sockets.on('connection', function (socket) {
 
 
   socket.on('notes_request', function(data){
-    console.log('Got notes: '+data);
     remotes.push(socket.id);
     io.sockets.emit('notes', data);
   });
