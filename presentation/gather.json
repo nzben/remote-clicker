@@ -1,0 +1,69 @@
+{
+  "title": "Gather Presentation",
+  "slides": [{
+      "id": "slide1",
+      "content": "<q>Hello world. Here's some <strong>bold</strong> text</q>",
+      "class": "slide step",
+      "data": {
+        "x": -1000,
+        "y": -1500
+      },
+      "notes": "<h2>Slide 1 notes</h2>
+            <p>Here's a paragraph with <strong>emphasis.</strong></p>"
+    }, {
+      "id": "slide2",
+      "content": "<q>Here is slide 2</q>",
+      "class": "slide step",
+      "data": {
+        "x": 0,
+        "y": -1500
+      },
+      "notes": "here are some notes for slide 2 <strong>with bold</strong>"
+    }, {
+      "content": "<q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>",
+      "class": "slide step",
+      "data": {
+        "x": 0,
+        "y": -1500
+      }
+    }, {
+      "id": "title",
+      "content": "<span class=\"try\">then you should try</span>
+        <h1>impress.js<sup>*</sup></h1>
+        <span class=\"footnote\"><sup>*</sup> no rhyme intended</span>",
+      "class": "step",
+      "data": {
+        "x": 0,
+        "y": 0,
+        "scale": 4
+      },
+      "notes": "notes for slide FOUR <strong>with bold</strong>"
+    }, {
+      "id": "its",
+      "content": "<p>It's a <strong>presentation tool</strong> <br/>
+        inspired by the idea behind <a href=\"http://prezi.com\">prezi.com</a> <br/>
+        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>",
+      "class": "step",
+      "data": {
+        "x": 850,
+        "y": 3000,
+        "scale": 5,
+        "rotate": 90
+      },
+      "notes": "notes for slide FOUR <strong>with bold</strong>"
+    }, {
+      "id": "tiny",
+      "content": "<p>and <b>tiny</b> ideas</p>",
+      "class": "step",
+      "data": {
+        "x": 2825,
+        "y": 2325,
+        "z": -3000,
+        "scale": 1,
+        "rotate": 300
+      },
+      "notes": "notes for slide FOUR <strong>with bold</strong>"
+    }
+
+  ]
+}
