@@ -19,7 +19,7 @@
       },
       "notes": "here are some notes for slide 2 <strong>with bold</strong>"
     }, {
-      "content": "<q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>",
+      "content": "<q>This slide has a <strong>badly-formatted</strong> image in it.</q>",
       "class": "slide step",
       "data": {
         "x": 1000,
