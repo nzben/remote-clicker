@@ -2,7 +2,7 @@
   "title": "Gather Presentation",
   "slides": [{
       "id": "slide1",
-      "content": "<q>Hello world. Here's some <strong>bold</strong> text</q>",
+      "content": "<q>Yo, this is Clicker. Presentation is done with <strong>impress.js</strong> text</q>",
       "class": "slide step",
       "data": {
         "x": -1000,
