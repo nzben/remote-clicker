@@ -1,0 +1,21 @@
+[{
+    "id": "slide1",
+    "content": "<q>Hello world</q>",
+    "class": "slide step",
+    "data": {
+      "x": -1000,
+      "y": -1500
+    },
+    "notes" : "here are some notes <strong>with bold</strong>"
+  }, 
+  {
+    "id": "slide2",
+    "content": "<q>Here is slide 2</q>",
+    "class": "slide step",
+    "data": {
+      "x": 0,
+      "y": -1500
+    },
+    "notes" : "here are some notes for slide 2 <strong>with bold</strong>"
+  }
+]
