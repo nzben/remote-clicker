@@ -2,7 +2,7 @@
   "title": "Gather Presentation",
   "slides": [{
       "id": "slide1",
-      "content": "<q>Yo, this is Clicker. Presentation is done with <strong>impress.js</strong> text</q>",
+      "content": "<q>Yo, this is Clicker. Presentation transitions and layout are done with <strong>impress.js</strong> framework</q>",
       "class": "slide step",
       "data": {
         "x": -1000,
@@ -11,7 +11,7 @@
       "notes": "<h2>Slide 1 notes</h2>\n<p>Here's a paragraph with <strong>emphasis.</strong></p>"
     }, {
       "id": "slide2",
-      "content": "<q>Here is slide 2</q>",
+      "content": "<q>Slide content is built from a JSON file.</q>",
       "class": "slide step",
       "data": {
         "x": 0,
@@ -28,7 +28,7 @@
       "img": "http://farm6.staticflickr.com/5264/5767178084_6969674d7f_b.jpg"
     }, {
       "id": "title",
-      "content": "<span class=\"try\">then you should try</span>\n<h1>impress.js<sup>*</sup></h1>\n<span class=\"footnote\"><sup>*</sup> no rhyme intended</span>",
+      "content": "<span class=\"try\">if you visit</span>\n<h1>/clicker<sup>*</sup></h1>\nyou'll find a nifty way to control this presentation from your phone",
       "class": "step",
       "data": {
         "x": 0,
